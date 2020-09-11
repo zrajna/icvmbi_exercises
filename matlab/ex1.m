@@ -22,7 +22,7 @@ tic;
 %   Histogram equalization
 %   Hint: You can run a specific code section with Ctrl+Enter
 
-xray = imread('xray.png');
+xray = imread(fullfile('images','xray.png'));
 
 figure;
 
@@ -42,7 +42,7 @@ imhist(xray_eq);
 %   RGB to grayscale conversion
 %   Hint: check out imwrite(I) function to save processed images to disk
 
-hestain = imread('hestain.png');
+hestain = imread(fullfile('images','hestain.png'));
 
 figure;
 
@@ -65,7 +65,7 @@ imshow(hestain_diff);
 %   Noise removal
 %   Hint: in this exercise the final result is subjective
 
-mri_pd = imread('mri-pd.png');
+mri_pd = imread(fullfile('images','mri-pd.png'));
 
 figure;
 
