@@ -1,4 +1,4 @@
-#   ex1.py
+#   ex2.py
 #   Copyright (C) 2020  Zalan Rajna
 #
 #   This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 import numpy as np
 import cv2 as cv
 
-from ex1_functions import equalize_histogram, rgb_grayscale, enhance_image
+from ex2_functions import region_grow, active_contours, apply_watershed
 
 def main():
     print("Hello World!")

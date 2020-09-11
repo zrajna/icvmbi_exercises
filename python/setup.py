@@ -36,7 +36,7 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
     ],
     # packages=find_packages(where='.'),  # Required
-    py_modules=['ex1'],
+    py_modules=['ex1','ex1_functions','ex2','ex2_functions','ex3','ex3_functions'],
     python_requires='>=3.5, <4',
     install_requires=['numpy'],  # Optional
     entry_points={  # Optional

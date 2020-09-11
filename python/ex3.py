@@ -1,4 +1,4 @@
-#   ex1.py
+#   ex3.py
 #   Copyright (C) 2020  Zalan Rajna
 #
 #   This program is free software: you can redistribute it and/or modify
@@ -17,7 +17,7 @@
 import numpy as np
 import cv2 as cv
 
-from ex1_functions import equalize_histogram, rgb_grayscale, enhance_image
+from ex3_functions import basic_registration, elastic_registration, multimodal_registration
 
 def main():
     print("Hello World!")
