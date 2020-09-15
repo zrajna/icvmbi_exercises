@@ -1,10 +1,12 @@
 # Python specific instructions
 
-See general instructions for the exercises [here](../README.md)
+See general instructions for the exercises [here](../README.md).
+
+Complete the functions specified by the exercise in a single file (e.g. `ex1_functions.py`), and submit it in [moodle](https://moodle.oulu.fi/course/view.php?id=4366&section=3).
 
 ## Installation
 
-Python 3.5 or newer and pip are required
+Python 3.5 or newer (preferably 3.8) and pip are required.
 
 ### Install python, pip and setuptools
 
