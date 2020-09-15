@@ -6,6 +6,8 @@ Complete the functions specified by the exercise in a single file (e.g. `ex1_fun
 
 For OpenCV help see the OpenCV-Python [documentation](https://docs.opencv.org/4.4.0/d0/de3/tutorial_py_intro.html).
 
+A nice IDE for Python projects is the free [PyCharm Community version](https://www.jetbrains.com/pycharm/download) from JetBrains.
+
 ## Installation
 
 Python 3.5 or newer (preferably 3.8) and pip are required.
