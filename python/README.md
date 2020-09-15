@@ -4,6 +4,8 @@ See general instructions for the exercises [here](../README.md).
 
 Complete the functions specified by the exercise in a single file (e.g. `ex1_functions.py`), and submit it in [moodle](https://moodle.oulu.fi/course/view.php?id=4366&section=3).
 
+For OpenCV help see the OpenCV-Python [documentation](https://docs.opencv.org/4.4.0/d0/de3/tutorial_py_intro.html).
+
 ## Installation
 
 Python 3.5 or newer (preferably 3.8) and pip are required.
