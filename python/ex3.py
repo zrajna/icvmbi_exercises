@@ -17,11 +17,16 @@
 import numpy as np
 import cv2 as cv
 
-from ex3_functions import basic_registration, elastic_registration, multimodal_registration
+from ex3_functions import (
+    basic_registration,
+    elastic_registration,
+    multimodal_registration,
+)
+
 
 def main():
     print("Hello World!")
 
+
 if __name__ == "__main__":
     main()
-

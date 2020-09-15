@@ -18,4 +18,3 @@ def enhance_image(img):
     """Returns enhanced version of img"""
     # Your code comes here
     return img
-

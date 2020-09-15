@@ -26,25 +26,25 @@ from ex1_functions import equalize_histogram, rgb_grayscale, enhance_image
 def task1():
     """Task 1: Histogram equalization"""
     plt.figure()
-    xray = cv.imread(path.join('images', 'xray.png'), cv.IMREAD_GRAYSCALE)
+    xray = cv.imread(path.join("images", "xray.png"), cv.IMREAD_GRAYSCALE)
 
     plt.subplot(2, 2, 1)
-    plt.imshow(xray, cmap='gray')
-    plt.axis('off')
+    plt.imshow(xray, cmap="gray")
+    plt.axis("off")
     plt.subplot(2, 2, 2)
     plt.hist(xray.ravel(), 256)
     plt.ylim((0, 2e5))
-    plt.axis('off')
+    plt.axis("off")
 
     xray_eq = equalize_histogram(xray)
 
     plt.subplot(2, 2, 3)
-    plt.imshow(xray_eq, cmap='gray')
-    plt.axis('off')
+    plt.imshow(xray_eq, cmap="gray")
+    plt.axis("off")
     plt.subplot(2, 2, 4)
     plt.hist(xray_eq.ravel(), 256)
     plt.ylim((0, 2e5))
-    plt.axis('off')
+    plt.axis("off")
 
     plt.show()
 
@@ -52,32 +52,32 @@ def task1():
 def task2():
     """Task 2: RGB to grayscale conversion"""
     plt.figure()
-    hestain = cv.imread(path.join('images', 'hestain.png'), cv.IMREAD_COLOR)
+    hestain = cv.imread(path.join("images", "hestain.png"), cv.IMREAD_COLOR)
     plt.subplot(2, 2, 1)
     plt.imshow(hestain)
-    plt.axis('off')
+    plt.axis("off")
 
-    hestain_gray1 = rgb_grayscale(hestain, np.ones((3,))/3)
+    hestain_gray1 = rgb_grayscale(hestain, np.ones((3,)) / 3)
     plt.subplot(2, 2, 3)
-    plt.imshow(hestain_gray1, cmap='gray')
-    plt.axis('off')
+    plt.imshow(hestain_gray1, cmap="gray")
+    plt.axis("off")
 
     hestain_gray2 = rgb_grayscale(hestain, np.array([0.299, 0.587, 0.114]))
     plt.subplot(2, 2, 4)
-    plt.imshow(hestain_gray2, cmap='gray')
-    plt.axis('off')
+    plt.imshow(hestain_gray2, cmap="gray")
+    plt.axis("off")
 
     hestain_diff = hestain_gray2 - hestain_gray1
     plt.subplot(2, 2, 2)
-    plt.imshow(hestain_diff, cmap='gray')
-    plt.axis('off')
+    plt.imshow(hestain_diff, cmap="gray")
+    plt.axis("off")
 
     plt.show()
 
 
 def task3():
     """Task 3: Noise removal"""
-    mri_pd = cv.imread(path.join('images', 'mri-pd.png'), cv.IMREAD_GRAYSCALE)
+    mri_pd = cv.imread(path.join("images", "mri-pd.png"), cv.IMREAD_GRAYSCALE)
 
     mri_pd_enhanced = enhance_image(mri_pd)
 

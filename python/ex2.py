@@ -19,9 +19,10 @@ import cv2 as cv
 
 from ex2_functions import region_grow, active_contours, apply_watershed
 
+
 def main():
     print("Hello World!")
 
+
 if __name__ == "__main__":
     main()
-
