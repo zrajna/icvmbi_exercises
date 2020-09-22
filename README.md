@@ -12,6 +12,8 @@ Always follow inline documentation and comments, and only submit syntactically a
 
 If you find a typo, place for corrections or room for improvement in the task descriptions, create an issue on [github](https://github.com/zrajna/icvmbi_exercises/issues) and/or submit a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+You should make sure that you are using the latest template from this site before seeking assistance. :)
+
 ## Language specific instructions
 
 * [MATLAB](matlab/README.md)
