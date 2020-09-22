@@ -23,6 +23,29 @@ from matplotlib import pyplot as plt
 from ex1_functions import equalize_histogram, rgb_grayscale, enhance_image
 
 
+def make_cv_title(image, title, border_size=10):
+    img_w_border = cv.copyMakeBorder(
+        image,
+        border_size,
+        border_size,
+        border_size,
+        border_size,
+        cv.BORDER_CONSTANT,
+        value=[180, 180, 180],
+    )
+    rect = np.ones((4 * border_size, img_w_border.shape[1]), dtype=np.uint8) * 180
+    rect_w_text = cv.putText(
+        rect,
+        title,
+        (border_size, 3 * border_size),
+        cv.FONT_HERSHEY_SIMPLEX,
+        0.5,
+        (0, 0, 0),
+        2,
+    )
+    return cv.vconcat((rect_w_text, img_w_border))
+
+
 def task1():
     """Task 1: Histogram equalization"""
     plt.figure()
@@ -86,11 +109,16 @@ def task2():
 def task3():
     """Task 3: Noise removal"""
     mri_pd = cv.imread(path.join("images", "mri-pd.png"), cv.IMREAD_GRAYSCALE)
+    mri_pd_w_title = make_cv_title(mri_pd, "noisy proton density slice")
 
     mri_pd_enhanced = enhance_image(mri_pd)
+    mri_pd_enhanced_w_title = make_cv_title(mri_pd_enhanced, "enhanced proton density slice")
 
     # Show the image in an OpenCV window this time
-    cv.imshow("mri-pd (press any key to close)", np.hstack((mri_pd, mri_pd_enhanced)))
+    cv.imshow(
+        "mri-pd (press any key to close)",
+        np.hstack((mri_pd_w_title, mri_pd_enhanced_w_title)),
+    )
     cv.waitKey(0)
     cv.destroyAllWindows()
 
