@@ -31,20 +31,24 @@ def task1():
     plt.subplot(2, 2, 1)
     plt.imshow(xray, cmap="gray")
     plt.axis("off")
+    plt.title("original xray image")
     plt.subplot(2, 2, 2)
     plt.hist(xray.ravel(), 256)
     plt.ylim((0, 2e5))
     plt.axis("off")
+    plt.title("histogram of original xray image")
 
     xray_eq = equalize_histogram(xray)
 
     plt.subplot(2, 2, 3)
     plt.imshow(xray_eq, cmap="gray")
     plt.axis("off")
+    plt.title("modified xray image")
     plt.subplot(2, 2, 4)
     plt.hist(xray_eq.ravel(), 256)
     plt.ylim((0, 2e5))
     plt.axis("off")
+    plt.title("histogram of modified xray image")
 
     plt.show()
 
@@ -56,21 +60,25 @@ def task2():
     plt.subplot(2, 2, 1)
     plt.imshow(hestain)
     plt.axis("off")
+    plt.title("original microscope image")
 
     hestain_gray1 = rgb_grayscale(hestain, np.ones((3,)) / 3)
     plt.subplot(2, 2, 3)
     plt.imshow(hestain_gray1, cmap="gray")
     plt.axis("off")
+    plt.title("equally weighted grayscale conversion")
 
     hestain_gray2 = rgb_grayscale(hestain, np.array([0.299, 0.587, 0.114]))
     plt.subplot(2, 2, 4)
     plt.imshow(hestain_gray2, cmap="gray")
     plt.axis("off")
+    plt.title("0.299R + 0.587G + 0.114B")
 
     hestain_diff = hestain_gray2 - hestain_gray1
     plt.subplot(2, 2, 2)
     plt.imshow(hestain_diff, cmap="gray")
     plt.axis("off")
+    plt.title("difference between grayscale conversions")
 
     plt.show()
 

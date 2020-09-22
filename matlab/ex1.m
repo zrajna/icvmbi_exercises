@@ -28,15 +28,19 @@ figure;
 
 subplot(221);
 imshow(xray);
+title('original xray image')
 subplot(222);
 imhist(xray);
+title('histogram of original xray image')
 
 xray_eq = equalize_histogram(xray);
 
 subplot(223);
 imshow(xray_eq);
+title('modified xray image')
 subplot(224);
 imhist(xray_eq);
+title('histogram of modified xray image')
 
 %% Task 2
 %   RGB to grayscale conversion
@@ -48,18 +52,22 @@ figure;
 
 subplot(221);
 imshow(hestain);
+title('original microscope image')
 
 hestain_gray1 = rgb_grayscale(hestain, ones(1,3)./3);
 subplot(223);
 imshow(hestain_gray1);
+title('equally weighted grayscale conversion')
 
 hestain_gray2 = rgb_grayscale(hestain, [0.299, 0.587, 0.114]);
 subplot(224);
 imshow(hestain_gray2);
+title('0.299R + 0.587G + 0.114B')
 
 subplot(222);
 hestain_diff = normalize_image(hestain_gray2 - hestain_gray1);
 imshow(hestain_diff);
+title('difference between grayscale conversions')
 
 %% Task 3
 %   Noise removal
@@ -71,10 +79,12 @@ figure;
 
 subplot(121);
 imshow(mri_pd);
+title('noisy proton density slice')
 
 subplot(122);
 mri_pd_enhanced = enhance_image(mri_pd);
 imshow(mri_pd_enhanced);
+title('enhanced proton density slice')
 
 %% Runtime
 
