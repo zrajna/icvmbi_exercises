@@ -17,7 +17,7 @@
 from os import path
 
 import numpy as np
-import cv2 as cv
+import cv2.cv2 as cv
 from matplotlib import pyplot as plt
 
 from ex1_functions import equalize_histogram, rgb_grayscale, enhance_image
