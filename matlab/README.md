@@ -9,3 +9,5 @@ Include the [Image Processing Toolbox](https://se.mathworks.com/products/image.h
 For MATLAB help see the Image Processing Toolbox [documentation](https://se.mathworks.com/help/images/).
 
 Complete the functions specified by the exercise in separate files, and submit each of them in [moodle](https://moodle.oulu.fi/course/view.php?id=4366&section=3).
+
+I am using MATLAB R2020b for testing, but older versions should work just fine too.
