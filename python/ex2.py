@@ -19,6 +19,7 @@ from os import path
 import numpy as np
 import cv2.cv2 as cv
 from matplotlib import pyplot as plt
+from skimage.draw import circle_perimeter
 
 from ex2_functions import segment_lung, segment_cells, segment_colon
 
@@ -54,12 +55,60 @@ def task1():
 
 def task2():
     """Task 2: Active contours segmentation"""
-    return
+    plt.figure()
+    cells = cv.imread(path.join("images", "cells.png"), cv.IMREAD_GRAYSCALE)
+
+    plt.subplot(1, 2, 1)
+    plt.imshow(cells, cmap="gray")
+    plt.axis("off")
+    plt.title("original cells and initial mask")
+
+    center = (460, 430)
+    radius = 300
+    circle = plt.Circle(center, radius, color='deepskyblue', alpha=0.2)
+    ax = plt.gca()
+    ax.add_artist(circle)
+    mask = np.zeros(cells.shape, dtype=np.uint8)
+    mask[circle_perimeter(center[0], center[1], radius)] = True
+
+    cells_bin = segment_cells(cells, mask)
+
+    background = np.zeros(cells.shape + (3, ), dtype=np.uint8)
+    background[..., 1] = 255
+    abdomen_masked = np.ma.masked_where(cells_bin, cells)
+    plt.subplot(1, 2, 2)
+    plt.imshow(background)
+    plt.imshow(abdomen_masked, cmap="gray")
+    plt.axis("off")
+    plt.title("segmented cells")
+
+    plt.show()
 
 
 def task3():
     """Task 3: Watershed segmentation"""
-    return
+    plt.figure()
+    colon = cv.imread(path.join("images", "colon.tif"))
+    colon = cv.cvtColor(colon, cv.COLOR_BGR2RGB)
+
+    plt.subplot(1, 2, 1)
+    plt.imshow(colon)
+    plt.axis("off")
+    plt.title("original colon image")
+
+    skeleton = segment_colon(colon)
+
+    background = np.zeros(colon.shape, dtype=np.uint8)
+    background[..., 1] = 255
+    colon_gray = cv.cvtColor(colon, cv.COLOR_RGB2GRAY)
+    colon_masked = np.ma.masked_where(skeleton, colon_gray)
+    plt.subplot(1, 2, 2)
+    plt.imshow(background)
+    plt.imshow(colon_masked, cmap="gray")
+    plt.axis("off")
+    plt.title("segmented cells")
+
+    plt.show()
 
 
 def main():

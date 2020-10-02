@@ -1,6 +1,8 @@
 import numpy as np
 import cv2.cv2 as cv
 
+from skimage.segmentation import chan_vese, watershed
+
 
 def segment_lung(img, p):
     """Returns binary mask of lung.
@@ -18,6 +20,7 @@ def segment_lung(img, p):
 
 def segment_cells(img, mask):
     """Returns binary mask of cells.
+    Hint: you should/can use chan_vese function from skimage.segmentation
     Args:
         img:   input grayscale image
         mask:  initial region to shrink
@@ -31,6 +34,7 @@ def segment_cells(img, mask):
 
 def segment_colon(img):
     """Returns binary skeleton between colon segments.
+    Hint: you should/can use watershed function from skimage.segmentation or cv
     Args:
         img:  input RGB color image
     Returns:
