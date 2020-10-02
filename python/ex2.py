@@ -14,14 +14,59 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+from os import path
+
 import numpy as np
 import cv2.cv2 as cv
+from matplotlib import pyplot as plt
 
-from ex2_functions import region_grow, active_contours, apply_watershed
+from ex2_functions import segment_lung, segment_cells, segment_colon
+
+
+def task1():
+    """Task 1: Region growing segmentation"""
+    plt.figure()
+    abdomen = cv.imread(path.join("images", "abdomen.png"), cv.IMREAD_GRAYSCALE)
+
+    plt.subplot(1, 2, 1)
+    plt.imshow(abdomen, cmap="gray")
+    plt.axis("off")
+    plt.title("original CT section")
+
+    seedpoint = (330, 170)
+
+    plt.plot(seedpoint[0], seedpoint[1], color='red', marker="+", markersize=20, linewidth=2)
+    plt.legend('seed point', loc='upper left')
+
+    lung = segment_lung(abdomen, seedpoint)
+
+    background = np.zeros(abdomen.shape + (3, ), dtype=np.uint8)
+    background[..., 1] = 255
+    abdomen_masked = np.ma.masked_where(lung, abdomen)
+    plt.subplot(1, 2, 2)
+    plt.imshow(background)
+    plt.imshow(abdomen_masked, cmap="gray")
+    plt.axis("off")
+    plt.title("segmented lung")
+
+    plt.show()
+
+
+def task2():
+    """Task 2: Active contours segmentation"""
+    return
+
+
+def task3():
+    """Task 3: Watershed segmentation"""
+    return
 
 
 def main():
-    print("Hello World!")
+    """ICVMBI exercise 2"""
+    task1()
+    task2()
+    task3()
 
 
 if __name__ == "__main__":
