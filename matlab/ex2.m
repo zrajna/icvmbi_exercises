@@ -20,7 +20,7 @@ tic;
 
 %% Task 1
 %   Region growing segmentation
-%   Hint: you should/can use imsegfmm function in fast_march
+%   Hint: you should/can use imsegfmm function in segment_lung
 
 abdomen = imread(fullfile('images','abdomen.png'));
 
@@ -36,7 +36,7 @@ hold on;
 plot(seedpoint(1), seedpoint(2), 'r+', 'MarkerSize', 30, 'LineWidth', 2);
 legend('seed point', 'Location', 'bestoutside');
 
-lung = fast_march(abdomen, seedpoint);
+lung = segment_lung(abdomen, seedpoint);
 
 lung_overlaid = imoverlay(abdomen, lung, 'green');
 

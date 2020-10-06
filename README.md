@@ -25,7 +25,7 @@ You should make sure that you are using the latest template from this site befor
 
 *“Histogram equalization is a method in image processing for contrast adjustment using the image's histogram.”* Read and understand the detailed description of the method at [https://en.wikipedia.org/wiki/Histogram_equalization](https://en.wikipedia.org/wiki/Histogram_equalization).
 
-In this example we will equalize the histogram of an x-ray image, to see some parts (e.g. ribs) clearly.
+In this example you will equalize the histogram of an x-ray image, to see some parts (e.g. ribs) clearly.
 
 Complete the function `equalize_histogram` which returns the parameter grayscale image with equalized histogram. Always follow inline documentation and comments.
 
@@ -42,6 +42,30 @@ There are various handy and quickly accessible noise removal tools. We will use 
 Complete the function `enhance_image` which returns the *enhanced* version of the parameter grayscale image. Apply the median filter and Gaussian smoothing consecutively to the image. Select the parameters for yourself, and note that you cannot combine the filters, since the median filter is nonlinear. You may realize, that there is no perfect parameter which removes the noise completely. Selected parameters are usually a result of trade-off between desired features, and the choice will depend on the purpose and further application of the image.
 
 ## Exercise 2
+
+You are not expected to get perfect results in the segmentation tasks, but the functions should roughly do what is expected of them. If you wish to do plotting or preparing images yourself, also submit your modified ex2 script with your solution. Otherwise your function should work as a drop-in replacement of the template.
+
+Note the hints for functions to use. With some pre- and postprocessing and setting the parameters carefully, it is possible to solve the segmentation problem with them. However, you also may use alternatives.
+
+Python users! The package list was updated in the Python virtual environment, refresh yours with `pip install -r requirements.txt` in your venv after pulling the latest changes in the repo. If you wish to use other packages, you should also submit your `requirements.txt` file with your solution.
+
+### Task 1: Region growing segmentation
+
+“Region growing is a simple region-based image segmentation method. It is also classified as a pixel-based image segmentation method since it involves the selection of initial seed points. This approach to segmentation examines neighboring pixels of initial seed points and determines whether the pixel neighbors should be added to the region. The process is iterated on, in the same manner as general data clustering algorithms.” Read the detailed description at [https://en.wikipedia.org/wiki/Region_growing](https://en.wikipedia.org/wiki/Region_growing).
+
+In this task you will segment the lung from the image with a given seed point. Complete the function `segment_lung`, which returns the binary mask of the right lung (not radiological right).
+
+### Task 2: Active contours
+
+“Active contours evolve an initial contour in time according to multiple intrinsic geometric measures of the image. In the plugin implementation the measures are an edge based constraint, a grey value penalty and a curvature constraint which prevents them from leaking the object boundary at areas of poor edges. During curve evolution the active contours in this implementation can split and merge and thus be used to detect even multiple objects.” Read the detailed description at [https://se.mathworks.com/help/images/ref/activecontour.html](https://se.mathworks.com/help/images/ref/activecontour.html) or [https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_chan_vese.html](https://scikit-image.org/docs/dev/auto_examples/segmentation/plot_chan_vese.html).
+
+In this task you will segment the cells from the image background with a given initial binary mask. Complete the function `segment_cells`, which returns either the segmented cells within the mask or all of them in the image. Note, that the Chan-Vese algorithm might return the inverse, i.e. segment the background instead of the foreground, in which case you just need to return the negated result.
+
+### Task 3: Watershed segmentation
+
+Read about the idea of “watershed” of a greyscale image from [https://en.wikipedia.org/wiki/Watershed_(image_processing)](https://en.wikipedia.org/wiki/Watershed_(image_processing)).
+
+In this task you will roughly segment the parts of the colon (cells) from the given microscope image. You will need to radically blur the image for the watershed segmentation to work as expected. Complete the function `segment_colon`, which returns the binary skeleton between the segments. You may use dilation (morphological operator) to strengthen the skeleton lines.
 
 ## Exercise 3
 
