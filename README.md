@@ -43,17 +43,17 @@ Complete the function `enhance_image` which returns the *enhanced* version of th
 
 ## Exercise 2
 
-You are not expected to get perfect results in the segmentation tasks, but the functions should roughly do what is expected of them. If you wish to do plotting or preparing images yourself, also submit your modified ex2 script with your solution. Otherwise your function should work as a drop-in replacement of the template.
+You are not expected to get perfect results in the segmentation tasks, but the functions should roughly do what they are defined to do. If you wish to do plotting or preparing images yourself, also submit your modified `ex2` script with your solution. Otherwise your function should work as a drop-in replacement with the template.
 
-Note the hints for functions to use. With some pre- and postprocessing and setting the parameters carefully, it is possible to solve the segmentation problem with them. However, you also may use alternatives.
+Note the hints for functions to use. With some pre- and postprocessing, and setting the parameters carefully, it is possible to solve the segmentation problem with the suggested functions. However, you may freely choose alternatives as well.
 
-Python users! The package list was updated in the Python virtual environment, refresh yours with `pip install -r requirements.txt` in your venv after pulling the latest changes in the repo. If you wish to use other packages, you should also submit your `requirements.txt` file with your solution.
+*Python users!* The package list was updated in the Python virtual environment, refresh yours with `pip install -r requirements.txt` in your venv after pulling the latest changes in the repo. If you wish to use other packages, you should also submit your `requirements.txt` file with your solution.
 
 ### Task 1: Region growing segmentation
 
 “Region growing is a simple region-based image segmentation method. It is also classified as a pixel-based image segmentation method since it involves the selection of initial seed points. This approach to segmentation examines neighboring pixels of initial seed points and determines whether the pixel neighbors should be added to the region. The process is iterated on, in the same manner as general data clustering algorithms.” Read the detailed description at [https://en.wikipedia.org/wiki/Region_growing](https://en.wikipedia.org/wiki/Region_growing).
 
-In this task you will segment the lung from the image with a given seed point. Complete the function `segment_lung`, which returns the binary mask of the right lung (not radiological right).
+In this task you will segment the lung from the image with a given seed point. Complete the function `segment_lung`, which returns the binary mask of the lung on the right side of the image.
 
 ### Task 2: Active contours
 
@@ -65,7 +65,7 @@ In this task you will segment the cells from the image background with a given i
 
 Read about the idea of “watershed” of a greyscale image from [https://en.wikipedia.org/wiki/Watershed_(image_processing)](https://en.wikipedia.org/wiki/Watershed_(image_processing)).
 
-In this task you will roughly segment the parts of the colon (cells) from the given microscope image. You will need to radically blur the image for the watershed segmentation to work as expected. Complete the function `segment_colon`, which returns the binary skeleton between the segments. You may use dilation (morphological operator) to strengthen the skeleton lines.
+In this task you will roughly segment the parts of the colon from the given microscope image. You initially will need to radically blur the image for the watershed segmentation to work as expected. Complete the function `segment_colon`, which returns the binary skeleton between the segments. You may use dilation (morphological operator) to strengthen the skeleton lines.
 
 ## Exercise 3
 
