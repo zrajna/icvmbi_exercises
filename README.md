@@ -3,8 +3,8 @@ MATLAB and Python exercises for course:
 *521149S An introduction to computer vision methods for biomedical images*
 
 * [Exercise 1](#exercise-1) - image enhancement
-* [Exercise 2](#exercise-1) - image segmentation
-* [Exercise 3](#exercise-1) - image registration
+* [Exercise 2](#exercise-2) - image segmentation
+* [Exercise 3](#exercise-3) - image registration
 
 ## General instructions
 
