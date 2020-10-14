@@ -6,6 +6,8 @@ MATLAB and Python exercises for course:
 * [Exercise 2](#exercise-2) - image segmentation
 * [Exercise 3](#exercise-3) - image registration
 
+Materials are based on previous courses and Jeff Orchard's [Medical Image Processing](https://cs.uwaterloo.ca/~jorchard/cs473/CS473/Lectures.html) course.
+
 ## General instructions
 
 You are free to choose to complete the three exercises in ImageJ, MATLAB, or Python. You may also switch between them during the course.
@@ -72,4 +74,18 @@ Read about the idea of “watershed” of a greyscale image from [https://en.wik
 In this task you will roughly segment the parts of the colon from the given microscope image. You initially will need to radically blur the image for the watershed segmentation to work as expected. Complete the function `segment_colon`, which returns the binary skeleton between the segments. You may use dilation (morphological operator) to strengthen the skeleton lines.
 
 ## Exercise 3
+
+### Task 1: Basic registration
+
+Let’s register translated images. You should apply intensity based registration tools using cross-correlation based techniques. Complete the function `basic_registration`, which returns the moved and noisy head image in alighment with the centered head image.
+
+### Task 2: Extraction of matching descriptors
+
+Run and understand the code snippet which extracts and matches feature descriptors between images. Check out [this nice explanation](https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d) of feature detection and matching. Familiarize yourself with at least the [SURF](https://medium.com/data-breach/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e) and [SIFT](https://medium.com/data-breach/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40) descriptors.
+
+There is no simple way to apply non-rigid (elastic B-spline) transformation in MATLAB or Python/OpenCV (external libraries needed), but you can check out how the algorithm works in the ImageJ task.
+
+### Task 3: Multimodel registration
+
+As an introduction to joint histograms used in multimodal registration, in this task you will see how it is affected by image rotation. Complete the function `jisp2d`, which calculates the joint intensity scatter plot between two images.
 
