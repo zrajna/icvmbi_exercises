@@ -77,13 +77,13 @@ In this task you will roughly segment the parts of the colon from the given micr
 
 ### Task 1: Basic registration
 
-Let’s register translated images. You should apply intensity based registration tools using cross-correlation based techniques. Complete the function `basic_registration`, which returns the moved and noisy head image in alighment with the centered head image.
+Let’s register translated images. You should apply intensity based registration which use cross-correlation techniques. Complete the function `basic_registration`, which returns the moved and noisy head image in alighment with the centered head image.
 
 ### Task 2: Extraction of matching descriptors
 
 Run and understand the code snippet which extracts and matches feature descriptors between images. Check out [this nice explanation](https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d) of feature detection and matching. Familiarize yourself with at least the [SURF](https://medium.com/data-breach/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e) and [SIFT](https://medium.com/data-breach/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40) descriptors.
 
-There is no simple way to apply non-rigid (elastic B-spline) transformation in MATLAB or Python/OpenCV (external libraries needed), but you can check out how the algorithm works in the ImageJ task.
+There is no simple way to estimate non-rigid (elastic B-splines) transformation in MATLAB or Python/OpenCV (external libraries would be needed), but you can check out how the algorithm works in the ImageJ task.
 
 ### Task 3: Multimodel registration
 
