@@ -83,7 +83,7 @@ Let’s register translated images. You should apply intensity based registratio
 
 Run and understand the code snippet which extracts and matches feature descriptors between images. Check out [this nice explanation](https://medium.com/data-breach/introduction-to-feature-detection-and-matching-65e27179885d) of feature detection and matching. Familiarize yourself with at least the [SURF](https://medium.com/data-breach/introduction-to-surf-speeded-up-robust-features-c7396d6e7c4e) and [SIFT](https://medium.com/data-breach/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40) descriptors.
 
-There is no simple way to estimate non-rigid (elastic B-splines) transformation in MATLAB or Python/OpenCV (external libraries would be needed), but you can check out how the algorithm works in the ImageJ task.
+There is no simple way to estimate non-rigid (elastic B-splines) transformation in MATLAB or Python/OpenCV (external libraries would be needed), but you can check out how the algorithm works in the [ImageJ task](https://moodle.oulu.fi/mod/assign/view.php?id=227920).
 
 ### Task 3: Multimodel registration
 
